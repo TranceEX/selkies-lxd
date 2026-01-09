@@ -4,7 +4,7 @@ Requires=xvfb.service
 After=xvfb.service
 
 [Service]
-ExecStart=/usr/bin/dbus-launch --exit-with-session /usr/bin/REPLACE_DESKTOP
+ExecStart=/usr/bin/dbus-launch --exit-with-session /usr/bin/startxfce4
 Restart=always
 RestartSec=5
 Environment=DISPLAY=:1

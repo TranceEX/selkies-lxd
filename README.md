@@ -6,7 +6,7 @@ Based on [Selkies Base Images from LinuxServer](https://github.com/linuxserver/d
 
 ## Setting up
 ```
-git clone https://github.com/musahi0128/selkies-lxd-arm64.git
+git clone https://github.com/TranceEX/selkies-lxd-arm64
 cd selkies-lxd-arm64
 bash setup.i3.sh
 # or

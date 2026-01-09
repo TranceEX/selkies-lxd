@@ -12,8 +12,8 @@ sudo apt clean
 curl https://rclone.org/install.sh | sudo bash
 sudo usermod -aG audio,video $USER
 pipx install udocker
-udocker pull ghcr.io/linuxserver/baseimage-selkies:ubuntunoble
-udocker create --name=selkies_tmp ghcr.io/linuxserver/baseimage-selkies:ubuntunoble
+udocker pull lsiobase/selkies:ubuntunoble-version-abc3106f
+udocker create --name=selkies_tmp lsiobase/selkies:ubuntunoble-version-abc3106f
 export SELKIES_ROOTFS="$(find ~/.udocker -name selkies_joystick_interposer.so | sed 's|/usr/lib/selkies_joystick_interposer.so||')"
 sudo rclone copy -L $SELKIES_ROOTFS/usr/lib/selkies_joystick_interposer.so /usr/lib/
 sudo rclone copy -L $SELKIES_ROOTFS/opt/lib/libudev.so.1.0.0-fake /opt/lib/
@@ -25,7 +25,7 @@ sudo chmod a+x /usr/bin/Xvfb
 sudo bash 01-init-nginx.sh
 sudo bash 02-init-selkies-config.sh
 udocker rm selkies_tmp
-udocker rmi ghcr.io/linuxserver/baseimage-selkies:ubuntunoble
+udocker rmi lsiobase/selkies:ubuntunoble-version-abc3106f
 sudo tee /etc/pulse/default.pa.d/selkies.pa > /dev/null <<EOF
 load-module module-null-sink sink_name="output" sink_properties=device.description="output"
 load-module module-null-sink sink_name="input" sink_properties=device.description="input"

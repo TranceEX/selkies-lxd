@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ ! -f "./docker-baseimage-selkies/root/defaults/default.conf" ]; then
-    git clone --single-branch --branch ubuntunoble https://github.com/linuxserver/docker-baseimage-selkies.git
+    git clone --single-branch --branch ubuntunoble-64666ddb-ls91 https://github.com/linuxserver/docker-baseimage-selkies.git
 fi
 
 # nginx Path

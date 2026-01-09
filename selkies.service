@@ -27,7 +27,7 @@ Environment=SELKIES_FRAMERATE=60
 Environment=SELKIES_INTERPOSER=/usr/lib/selkies_joystick_interposer.so
 Environment=SHLVL=0
 Environment=START_DOCKER=false
-Environment=TITLE=REPLACE_TITLE
+Environment=TITLE=Xubuntu
 Environment=TZ=Asia/Jakarta
 Environment=VIRTUAL_ENV=/lsiopy
 
