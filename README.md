@@ -8,9 +8,7 @@ Based on [Selkies Base Images from LinuxServer](https://github.com/linuxserver/d
 ```
 git clone https://github.com/TranceEX/selkies-lxd-arm64
 cd selkies-lxd-arm64
-bash setup.i3.sh
-# or
-# bash setup.xfce4.sh
+bash setup.xfce4.sh
 ```
 
 ## Notes
