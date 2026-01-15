@@ -25,8 +25,8 @@ done
 # Manifest creation
 cat > /usr/share/selkies/www/manifest.json <<EOF
 {
-  "name": "Selkies",
-  "short_name": "Selkies",
+  "name": "Debian-13",
+  "short_name": "Debian-13",
   "manifest_version": 2,
   "version": "1.0.0",
   "display": "fullscreen",

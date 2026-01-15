@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ ! -f "./docker-baseimage-selkies/root/defaults/default.conf" ]; then
-    git clone --single-branch --branch ubuntunoble-64666ddb-ls91 https://github.com/linuxserver/docker-baseimage-selkies.git
+    git clone --single-branch --branch debiantrixie-2ffc040a-ls33 https://github.com/linuxserver/docker-baseimage-selkies.git
 fi
 
 # nginx Path
@@ -11,8 +11,7 @@ NGINX_CONFIG=/etc/nginx/sites-available/default
 CPORT="${CUSTOM_PORT:-3000}"
 CHPORT="${CUSTOM_HTTPS_PORT:-3001}"
 CWS="${CUSTOM_WS_PORT:-8082}"
-#CUSER="${CUSTOM_USER:-abc}"
-CUSER="ubuntu"
+CUSER="debian"
 SFOLDER="${SUBFOLDER:-/}"
 DISABLE_IPV6="true"
 

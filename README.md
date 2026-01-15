@@ -1,14 +1,14 @@
 # selkies-lxd-arm64
 
-Selkies setup script for Ubuntu Noble arm64 running inside LXD container.
+Selkies setup script for Debian Trixie arm64 running inside LXD container.
 
 Based on [Selkies Base Images from LinuxServer](https://github.com/linuxserver/docker-baseimage-selkies/tree/ubuntunoble).
 
 ## Setting up
 ```
-git clone https://github.com/TranceEX/selkies-lxd-arm64
+git clone --single-branch --branch debiantrixie-arm64 https://github.com/TranceEX/selkies-lxd-arm64.git
 cd selkies-lxd-arm64
-bash setup.xfce4.sh
+bash setup.kde.sh
 ```
 
 ## Notes

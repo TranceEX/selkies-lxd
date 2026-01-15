@@ -6,14 +6,14 @@ sudo touch /root/.config/rclone/rclone.conf
 touch ~/.config/rclone/rclone.conf
 mkdir -p $HOME/Desktop
 sudo apt update
-sudo DEBIAN_FRONTEND=noninteractive apt install -yq acl dbus-x11 libepoxy0 libnginx-mod-http-fancyindex locales-all nginx pipx pulseaudio ssl-cert unzip x11-xkb-utils xcvt xdotool xsel xvfb \
-    xubuntu-desktop-minimal xfce4-goodies papirus-icon-theme
+sudo DEBIAN_FRONTEND=noninteractive apt install -yq acl dbus-x11 curl libepoxy0 libnginx-mod-http-fancyindex locales-all nginx pipx pulseaudio ssl-cert unzip x11-xkb-utils xcvt xdotool xclip xsel xvfb \
+    kde-plasma-desktop
 sudo apt clean
 curl https://rclone.org/install.sh | sudo bash
 sudo usermod -aG audio,video $USER
 pipx install udocker
-udocker pull lsiobase/selkies:ubuntunoble-version-abc3106f
-udocker create --name=selkies_tmp lsiobase/selkies:ubuntunoble-version-abc3106f
+udocker pull lsiobase/selkies:arm64v8-debiantrixie-2ffc040a-ls33
+udocker create --name=selkies_tmp lsiobase/selkies:arm64v8-debiantrixie-2ffc040a-ls33
 export SELKIES_ROOTFS="$(find ~/.udocker -name selkies_joystick_interposer.so | sed 's|/usr/lib/selkies_joystick_interposer.so||')"
 sudo rclone copy -L $SELKIES_ROOTFS/usr/lib/selkies_joystick_interposer.so /usr/lib/
 sudo rclone copy -L $SELKIES_ROOTFS/opt/lib/libudev.so.1.0.0-fake /opt/lib/
@@ -25,17 +25,14 @@ sudo chmod a+x /usr/bin/Xvfb
 sudo bash 01-init-nginx.sh
 sudo bash 02-init-selkies-config.sh
 udocker rm selkies_tmp
-udocker rmi lsiobase/selkies:ubuntunoble-version-abc3106f
+udocker rmi lsiobase/selkies:arm64v8-debiantrixie-2ffc040a-ls33
 sudo tee /etc/pulse/default.pa.d/selkies.pa > /dev/null <<EOF
 load-module module-null-sink sink_name="output" sink_properties=device.description="output"
 load-module module-null-sink sink_name="input" sink_properties=device.description="input"
 EOF
-sed -i 's/REPLACE_TITLE/Xubuntu/g' selkies.service
-sed -i 's|/usr/bin/REPLACE_DESKTOP|/usr/bin/startxfce4|g' desktop.service
 rclone copy . ~/.config/systemd/user/ --include="*.service"
 systemctl --user daemon-reexec
 systemctl --user daemon-reload
 systemctl --user disable pipewire.service pipewire.socket wireplumber.service pipewire-pulse.service pipewire-pulse.socket > /dev/null
 systemctl --user mask pipewire.service pipewire.socket wireplumber.service pipewire-pulse.service pipewire-pulse.socket > /dev/null
 systemctl --user enable --now xvfb desktop pulseaudio selkies
-# sudo reboot
