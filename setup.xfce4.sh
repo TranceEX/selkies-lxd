@@ -36,3 +36,4 @@ systemctl --user daemon-reload
 systemctl --user disable pipewire.service pipewire.socket wireplumber.service pipewire-pulse.service pipewire-pulse.socket > /dev/null
 systemctl --user mask pipewire.service pipewire.socket wireplumber.service pipewire-pulse.service pipewire-pulse.socket > /dev/null
 systemctl --user enable --now xvfb desktop pulseaudio selkies
+loginctl enable-linger $USER
