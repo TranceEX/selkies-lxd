@@ -6,8 +6,8 @@ Based on [Selkies Base Images from LinuxServer](https://github.com/linuxserver/d
 
 ## Setting up
 ```
-git clone https://github.com/TranceEX/selkies-lxd-arm64
-cd selkies-lxd-arm64
+git clone --single-branch --branch ubuntunoble-arm64 https://github.com/TranceEX/selkies-lxd.git
+cd selkies-lxd
 bash setup.xfce4.sh
 ```
 
