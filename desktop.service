@@ -11,4 +11,3 @@ Environment=DISPLAY=:1
 
 [Install]
 WantedBy=default.target
-
