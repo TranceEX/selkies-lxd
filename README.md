@@ -8,7 +8,7 @@ Based on [Selkies Base Images from LinuxServer](https://github.com/linuxserver/d
 ```
 git clone --single-branch --branch ubuntunoble-amd64 https://github.com/TranceEX/selkies-lxd.git
 cd selkies-lxd
-bash setup.xfce4.sh
+bash setup.kde.sh
 ```
 
 ## Notes
