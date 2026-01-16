@@ -7,7 +7,7 @@ touch ~/.config/rclone/rclone.conf
 mkdir -p $HOME/Desktop
 sudo apt update
 sudo DEBIAN_FRONTEND=noninteractive apt install -yq acl dbus-x11 libepoxy0 libnginx-mod-http-fancyindex locales-all nginx pipx pulseaudio ssl-cert unzip x11-xkb-utils xcvt xclip curl xdotool xsel xvfb \
-    xubuntu-desktop-minimal xfce4-goodies papirus-icon-theme
+    kde-plasma-desktop
 sudo apt clean
 curl https://rclone.org/install.sh | sudo bash
 sudo usermod -aG audio,video $USER
